@@ -2,33 +2,24 @@ identity:
   name: "shopify-tools"
   author: "ryuichi"
   label:
-    en_US: "shopify-tools"
-    zh_Hans: "shopify-tools"
-    pt_BR: "shopify-tools"
-    ja_JP: "shopify-tools"
+    en_US: "Get product"
+    ja_JP: "商品取得"
+
 description:
   human:
-    en_US: "Shopify tools for my Dify workflows"
-    zh_Hans: "Shopify tools for my Dify workflows"
-    pt_BR: "Shopify tools for my Dify workflows"
-    ja_JP: "Shopify tools for my Dify workflows"
-  llm: "Shopify tools for my Dify workflows"
+    en_US: "Get a Shopify product by product ID"
+    ja_JP: "product ID で Shopify 商品を取得します"
+  llm: "Get a Shopify product by Shopify product ID"
+
 parameters:
-  - name: query
+  - name: product_id
     type: string
     required: true
     label:
-      en_US: Query string
-      zh_Hans: 查询语句
-      pt_BR: Query string
-      ja_JP: クエリ文字列
+      en_US: Product ID
+      ja_JP: 商品ID
     human_description:
-      en_US: "Shopify tools for my Dify workflows"
-      zh_Hans: "Shopify tools for my Dify workflows"
-      pt_BR: "Shopify tools for my Dify workflows"
-      ja_JP: "Shopify tools for my Dify workflows"
-    llm_description: "Shopify tools for my Dify workflows"
+      en_US: "Shopify product numeric ID, for example 1234567890123"
+      ja_JP: "Shopify の商品数値 ID。例: 1234567890123"
+    llm_description: "Shopify product numeric ID"
     form: llm
-extra:
-  python:
-    source: tools/shopify-tools.py
