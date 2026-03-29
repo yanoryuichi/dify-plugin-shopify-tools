@@ -1,0 +1,34 @@
+identity:
+  name: "shopify-tools"
+  author: "ryuichi"
+  label:
+    en_US: "shopify-tools"
+    zh_Hans: "shopify-tools"
+    pt_BR: "shopify-tools"
+    ja_JP: "shopify-tools"
+description:
+  human:
+    en_US: "Shopify tools for my Dify workflows"
+    zh_Hans: "Shopify tools for my Dify workflows"
+    pt_BR: "Shopify tools for my Dify workflows"
+    ja_JP: "Shopify tools for my Dify workflows"
+  llm: "Shopify tools for my Dify workflows"
+parameters:
+  - name: query
+    type: string
+    required: true
+    label:
+      en_US: Query string
+      zh_Hans: 查询语句
+      pt_BR: Query string
+      ja_JP: クエリ文字列
+    human_description:
+      en_US: "Shopify tools for my Dify workflows"
+      zh_Hans: "Shopify tools for my Dify workflows"
+      pt_BR: "Shopify tools for my Dify workflows"
+      ja_JP: "Shopify tools for my Dify workflows"
+    llm_description: "Shopify tools for my Dify workflows"
+    form: llm
+extra:
+  python:
+    source: tools/shopify-tools.py

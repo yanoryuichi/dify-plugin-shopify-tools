@@ -1,0 +1,39 @@
+version: 0.0.1
+type: plugin
+author: ryuichi
+name: shopify-tools
+label:
+  en_US: shopify-tools
+  ja_JP: shopify-tools
+  zh_Hans: shopify-tools
+  pt_BR: shopify-tools
+description:
+  en_US: Shopify tools for my Dify workflows
+  ja_JP: Shopify tools for my Dify workflows
+  zh_Hans: Shopify tools for my Dify workflows
+  pt_BR: Shopify tools for my Dify workflows
+icon: icon.svg
+icon_dark: icon-dark.svg
+resource:
+  memory: 268435456
+  permission:
+    tool:
+      enabled: true
+    app:
+      enabled: true
+plugins:
+  tools:
+    - provider/shopify-tools.yaml
+meta:
+  version: 0.0.1
+  arch:
+    - amd64
+    - arm64
+  runner:
+    language: python
+    version: "3.12"
+    entrypoint: main
+  minimum_dify_version: null
+created_at: 2026-03-29T17:21:10.92748784+09:00
+privacy: PRIVACY.md
+verified: false
