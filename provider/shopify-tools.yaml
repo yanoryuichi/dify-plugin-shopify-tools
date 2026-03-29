@@ -50,7 +50,7 @@ credentials_for_provider:
       ja_JP: Shopify Admin API のバージョン
 
 tools:
-  - tools/shopify-tools.yaml
+  - tools/get-product.yaml
 
 extra:
   python:

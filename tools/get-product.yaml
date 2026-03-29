@@ -1,0 +1,41 @@
+identity:
+  name: "get-product"
+  author: "ryuichi"
+  label:
+    en_US: "Get product"
+    ja_JP: "商品取得"
+
+description:
+  human:
+    en_US: "Get a Shopify product by product ID or handle"
+    ja_JP: "product ID または handle で Shopify 商品を取得します"
+  llm: "Get a Shopify product by Shopify product ID or handle"
+
+parameters:
+  - name: product_id
+    type: string
+    required: false
+    label:
+      en_US: Product ID
+      ja_JP: 商品ID
+    human_description:
+      en_US: "Shopify product numeric ID, for example 1234567890123"
+      ja_JP: "Shopify の商品数値 ID。例: 1234567890123"
+    llm_description: "Shopify product numeric ID"
+    form: llm
+
+  - name: handle
+    type: string
+    required: false
+    label:
+      en_US: Handle
+      ja_JP: ハンドル
+    human_description:
+      en_US: "Shopify product handle, for example test-product-a"
+      ja_JP: "Shopify の商品 handle。例: test-product-a"
+    llm_description: "Shopify product handle"
+    form: llm
+
+extra:
+  python:
+    source: tools/get-product.py
