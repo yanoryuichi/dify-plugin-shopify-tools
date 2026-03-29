@@ -93,9 +93,36 @@ class ShopifyToolsTool(Tool):
                 })
                 return
 
+            variants = product.get("variants", {}).get("nodes", [])
+            first_variant = variants[0] if variants else None
+
+            image_url = (
+                product.get("featuredMedia", {})
+                .get("preview", {})
+                .get("image", {})
+                .get("url")
+            )
+
+            formatted_product = {
+                "id": product.get("legacyResourceId"),
+                "gid": product.get("id"),
+                "title": product.get("title"),
+                "handle": product.get("handle"),
+                "description": product.get("description"),
+                "status": product.get("status"),
+                "online_store_url": product.get("onlineStoreUrl"),
+                "image_url": image_url,
+                "total_inventory": product.get("totalInventory"),
+                "price": first_variant.get("price") if first_variant else None,
+                "inventory_quantity": first_variant.get("inventoryQuantity") if first_variant else None,
+                "sku": first_variant.get("sku") if first_variant else None,
+                "variant_title": first_variant.get("title") if first_variant else None,
+                "variants": variants,
+            }
+
             yield self.create_json_message({
                 "ok": True,
-                "product": product,
+                "product": formatted_product,
             })
 
         except requests.HTTPError as e:
