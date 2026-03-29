@@ -23,3 +23,7 @@ parameters:
       ja_JP: "Shopify の商品数値 ID。例: 1234567890123"
     llm_description: "Shopify product numeric ID"
     form: llm
+
+extra:
+  python:
+    source: tools/shopify-tools.py
