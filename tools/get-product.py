@@ -7,6 +7,52 @@ from dify_plugin.entities.tool import ToolInvokeMessage
 
 
 class GetProductTool(Tool):
+    def _get_access_token(self) -> str:
+        auth_method = (self.runtime.credentials.get("auth_method") or "").strip()
+        shop_domain = (self.runtime.credentials.get("shop_domain") or "").strip()
+
+        if auth_method == "access_token":
+            token = (
+                self.runtime.credentials.get("admin_api_access_token") or ""
+            ).strip()
+            if not token:
+                raise ValueError("admin_api_access_token is required")
+            return token
+
+        if auth_method == "client_credentials":
+            client_id = (self.runtime.credentials.get("client_id") or "").strip()
+            client_secret = (
+                self.runtime.credentials.get("client_secret") or ""
+            ).strip()
+
+            if not client_id or not client_secret:
+                raise ValueError("client_id and client_secret are required")
+
+            token_url = f"https://{shop_domain}/admin/oauth/access_token"
+            response = requests.post(
+                token_url,
+                headers={
+                    "Content-Type": "application/x-www-form-urlencoded",
+                    "Accept": "application/json",
+                },
+                data={
+                    "client_id": client_id,
+                    "client_secret": client_secret,
+                    "grant_type": "client_credentials",
+                },
+                timeout=30,
+            )
+            response.raise_for_status()
+            data = response.json()
+
+            access_token = (data.get("access_token") or "").strip()
+            if not access_token:
+                raise ValueError("failed to get access_token by client_credentials")
+
+            return access_token
+
+        raise ValueError("unsupported auth_method")
+
     def _invoke(self, tool_parameters: dict[str, Any]) -> Generator[ToolInvokeMessage]:
         product_id = (tool_parameters.get("product_id") or "").strip()
         handle = (tool_parameters.get("handle") or "").strip()
@@ -29,13 +75,16 @@ class GetProductTool(Tool):
             )
             return
 
+        # shop_domain = (self.runtime.credentials.get("shop_domain") or "").strip()
+        # admin_api_access_token = (
+        #     self.runtime.credentials.get("admin_api_access_token") or ""
+        # ).strip()
+        # api_version = (self.runtime.credentials.get("api_version") or "").strip()
+
         shop_domain = (self.runtime.credentials.get("shop_domain") or "").strip()
-        admin_api_access_token = (
-            self.runtime.credentials.get("admin_api_access_token") or ""
-        ).strip()
         api_version = (self.runtime.credentials.get("api_version") or "").strip()
 
-        if not shop_domain or not admin_api_access_token or not api_version:
+        if not shop_domain or not api_version:
             yield self.create_json_message(
                 {
                     "ok": False,
@@ -43,6 +92,27 @@ class GetProductTool(Tool):
                 }
             )
             return
+
+        try:
+            access_token = self._get_access_token()
+        except Exception as e:
+            yield self.create_json_message(
+                {
+                    "ok": False,
+                    "error": "authentication_error",
+                    "message": str(e),
+                }
+            )
+            return
+
+        # if not shop_domain or not admin_api_access_token or not api_version:
+        #     yield self.create_json_message(
+        #         {
+        #             "ok": False,
+        #             "error": "missing_provider_credentials",
+        #         }
+        #     )
+        #     return
 
         url = f"https://{shop_domain}/admin/api/{api_version}/graphql.json"
 
@@ -102,7 +172,7 @@ class GetProductTool(Tool):
             result_key = "productByIdentifier"
 
         headers = {
-            "X-Shopify-Access-Token": admin_api_access_token,
+            "X-Shopify-Access-Token": access_token,
             "Content-Type": "application/json",
         }
 
