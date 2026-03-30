@@ -1,17 +1,13 @@
-version: 0.0.1
+version: 0.1.0
 type: plugin
 author: ryuichi
 name: shopify-tools
 label:
-  en_US: shopify-tools
-  ja_JP: shopify-tools
-  zh_Hans: shopify-tools
-  pt_BR: shopify-tools
+  en_US: Shopify Tools
+  ja_JP: Shopify Tools
 description:
-  en_US: Shopify tools for my Dify workflows
-  ja_JP: Shopify tools for my Dify workflows
-  zh_Hans: Shopify tools for my Dify workflows
-  pt_BR: Shopify tools for my Dify workflows
+  en_US: Shopify tools for Dify workflows
+  ja_JP: Dify ワークフロー向けの Shopify ツール集
 icon: icon.svg
 icon_dark: icon-dark.svg
 resource:
@@ -25,7 +21,7 @@ plugins:
   tools:
     - provider/shopify-tools.yaml
 meta:
-  version: 0.0.1
+  version: 0.1.0
   arch:
     - amd64
     - arm64

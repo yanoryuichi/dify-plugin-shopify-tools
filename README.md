@@ -1,6 +1,6 @@
 # Shopify Tools for Dify
 
-A Dify tool plugin for fetching Shopify product data.
+A Dify tool plugin that provides Shopify tools for workflows and agents.
 
 ## Features
 
