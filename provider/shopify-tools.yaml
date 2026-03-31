@@ -21,7 +21,7 @@ credentials_for_provider:
       ja_JP: your-store.myshopify.com
     help:
       en_US: Enter your Shopify shop domain
-      ja_JP: Shopify の shop domain を入力してください
+      ja_JP: Shopify のショップドメインを入力してください
 
   auth_method:
     type: select
@@ -32,12 +32,12 @@ credentials_for_provider:
     options:
       - value: access_token
         label:
-          en_US: Admin API access token
-          ja_JP: Admin API アクセストークン
+          en_US: Admin API access token - Legacy custom app
+          ja_JP: Admin API アクセストークン - レガシーカスタムアプリ
       - value: client_credentials
         label:
-          en_US: Client credentials
-          ja_JP: Client ID / Client secret
+          en_US: Client credentials (ID / secret) - Custom app on Dev Dashboard
+          ja_JP: Client ID / Client secret - 開発者ダッシュボードのカスタムアプリ
 
   admin_api_access_token:
     type: secret-input
@@ -49,28 +49,34 @@ credentials_for_provider:
       en_US: shpat_xxx
       ja_JP: shpat_xxx
     help:
-      en_US: Required when auth method is access_token
-      ja_JP: auth_method が access_token のとき必須です
+      en_US: Required when auth method is "Admin API access token"
+      ja_JP: 認証方式が Admin API アクセストークンなら必須
 
   client_id:
     type: text-input
     required: false
     label:
       en_US: Client ID
-      ja_JP: クライアントID
+      ja_JP: Client ID
+    placeholder:
+      en_US: 123abcxxx
+      ja_JP: 123abcxxx
     help:
-      en_US: Required when auth method is client_credentials
-      ja_JP: auth_method が client_credentials のとき必須です
+      en_US: Required when auth method is "Client credentials"
+      ja_JP: 認証方式が Client ID / Client secret なら必須
 
   client_secret:
     type: secret-input
     required: false
     label:
       en_US: Client secret
-      ja_JP: クライアントシークレット
+      ja_JP: Client secret
+    placeholder:
+      en_US: shpss_xxx
+      ja_JP: shpss_xxx
     help:
-      en_US: Required when auth method is client_credentials
-      ja_JP: auth_method が client_credentials のとき必須です
+      en_US: Required when auth method is "Client credentials"
+      ja_JP: 認証方式が Client ID / Client secret なら必須
 
   api_version:
     type: text-input
