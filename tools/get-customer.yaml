@@ -1,0 +1,41 @@
+identity:
+  name: "get-customer"
+  author: "ryuichi"
+  label:
+    en_US: "Get customer"
+    ja_JP: "顧客取得"
+
+description:
+  human:
+    en_US: "Get a Shopify customer by customer ID or email"
+    ja_JP: "顧客IDまたはメールアドレスで Shopify の顧客を取得します"
+  llm: "Get a Shopify customer by customer ID or email"
+
+parameters:
+  - name: customer_id
+    type: string
+    required: false
+    label:
+      en_US: Customer ID
+      ja_JP: 顧客ID
+    human_description:
+      en_US: "Shopify customer numeric ID, for example 1234567890123"
+      ja_JP: "Shopify の顧客数値 ID。例: 1234567890123"
+    llm_description: "Shopify customer numeric ID"
+    form: llm
+
+  - name: email
+    type: string
+    required: false
+    label:
+      en_US: Email
+      ja_JP: メールアドレス
+    human_description:
+      en_US: "Customer email address"
+      ja_JP: "顧客のメールアドレス"
+    llm_description: "Shopify customer email address"
+    form: llm
+
+extra:
+  python:
+    source: tools/get-customer.py

@@ -92,6 +92,8 @@ credentials_for_provider:
       ja_JP: Shopify Admin API のバージョン
 
 tools:
+  - tools/get-customer.yaml
+  - tools/search-customers.yaml
   - tools/get-product.yaml
   - tools/get-order.yaml
   - tools/search-orders.yaml

@@ -6,6 +6,9 @@ A Dify tool plugin that provides Shopify tools for workflows and agents.
 
 - Get a product by `product_id`
 - Get a product by `handle`
+- Get a customer by `customer_id`
+- Get a customer by `email`
+- Search customers by `query`
 - Get an order by `order_id`
 - Get an order by `name`
 - Search orders by `query`
@@ -65,6 +68,42 @@ Output:
 - total price
 - customer summary
 - line items
+
+### `get-customer`
+
+Input:
+
+- `customer_id` or `email`
+
+Output:
+
+- customer name
+- email
+- phone
+- state
+- created date
+- number of orders
+- amount spent
+- tags
+
+### `search-customers`
+
+Input:
+
+- `query`
+- `limit` (optional, 1-20)
+
+Output:
+
+- matched customer list
+- customer ID
+- customer name
+- email
+- phone
+- state
+- created date
+- number of orders
+- amount spent
 
 ### `search-orders`
 

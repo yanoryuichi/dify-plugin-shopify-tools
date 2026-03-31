@@ -1,0 +1,41 @@
+identity:
+  name: "search-customers"
+  author: "ryuichi"
+  label:
+    en_US: "Search customers"
+    ja_JP: "顧客検索"
+
+description:
+  human:
+    en_US: "Search Shopify customers by keyword or Shopify search query"
+    ja_JP: "キーワードまたは Shopify 検索クエリで顧客を検索します"
+  llm: "Search Shopify customers by keyword or Shopify search query"
+
+parameters:
+  - name: query
+    type: string
+    required: true
+    label:
+      en_US: Query
+      ja_JP: 検索クエリ
+    human_description:
+      en_US: "Keyword or Shopify customer search query, for example email:test@example.com"
+      ja_JP: "キーワードまたは Shopify の顧客検索クエリ。例: email:test@example.com"
+    llm_description: "Keyword or Shopify customer search query"
+    form: llm
+
+  - name: limit
+    type: number
+    required: false
+    label:
+      en_US: Limit
+      ja_JP: 最大件数
+    human_description:
+      en_US: "Maximum number of customers to return, from 1 to 20"
+      ja_JP: "返す顧客の最大件数。1 から 20"
+    llm_description: "Maximum number of customers to return, between 1 and 20"
+    form: llm
+
+extra:
+  python:
+    source: tools/search-customers.py
