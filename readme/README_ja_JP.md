@@ -162,6 +162,12 @@ Shopify の商品、注文、顧客の取得・検索・タグ更新を行う Di
 - `search-orders`: https://shopify.dev/docs/api/admin-graphql/latest/queries/orders
 - `search-customers`: https://shopify.dev/docs/api/admin-graphql/latest/queries/customers
 
+## 免責事項
+
+- このプラグインの利用結果は保証されません。
+- Shopify の設定、権限、仕様変更などにより、期待どおりに動作しない場合があります。
+- 本プラグインは利用者の責任で使用してください。
+
 ## 注意
 
 - `shop_domain` は `your-store.myshopify.com` の形式で入力してください。
