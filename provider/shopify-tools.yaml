@@ -92,6 +92,12 @@ credentials_for_provider:
       ja_JP: Shopify Admin API のバージョン
 
 tools:
+  - tools/add-customer-tags.yaml
+  - tools/remove-customer-tags.yaml
+  - tools/add-order-tags.yaml
+  - tools/remove-order-tags.yaml
+  - tools/add-product-tags.yaml
+  - tools/remove-product-tags.yaml
   - tools/get-customer.yaml
   - tools/search-customers.yaml
   - tools/get-product.yaml

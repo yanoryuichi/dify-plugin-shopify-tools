@@ -1,0 +1,41 @@
+identity:
+  name: "add-order-tags"
+  author: "ryuichi"
+  label:
+    en_US: "Add order tags"
+    ja_JP: "注文タグ追加"
+
+description:
+  human:
+    en_US: "Add tags to a Shopify order without duplicating existing tags"
+    ja_JP: "既存タグを重複させずに Shopify 注文へタグを追加します"
+  llm: "Add tags to a Shopify order"
+
+parameters:
+  - name: order_id
+    type: string
+    required: true
+    label:
+      en_US: Order ID
+      ja_JP: 注文ID
+    human_description:
+      en_US: "Shopify order numeric ID"
+      ja_JP: "Shopify の注文数値 ID"
+    llm_description: "Shopify order numeric ID"
+    form: llm
+
+  - name: tags
+    type: string
+    required: true
+    label:
+      en_US: Tags
+      ja_JP: タグ
+    human_description:
+      en_US: "Comma-separated tags to add, for example vip, urgent"
+      ja_JP: "追加するカンマ区切りタグ。例: vip, urgent"
+    llm_description: "Comma-separated tags to add"
+    form: llm
+
+extra:
+  python:
+    source: tools/add-order-tags.py

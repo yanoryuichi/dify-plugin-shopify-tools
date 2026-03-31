@@ -9,10 +9,16 @@ A Dify tool plugin that provides Shopify tools for workflows and agents.
 - Get a customer by `customer_id`
 - Get a customer by `email`
 - Search customers by `query`
+- Add customer tags
+- Remove customer tags
 - Get an order by `order_id`
 - Get an order by `name`
 - Search orders by `query`
+- Add order tags
+- Remove order tags
 - Search products by `query`
+- Add product tags
+- Remove product tags
 - Supports:
   - Admin API access token
   - Client credentials (`client_id` / `client_secret`)
@@ -52,6 +58,28 @@ Output:
 - price
 - inventory
 - variants
+
+### `add-product-tags`
+
+Input:
+
+- `product_id`
+- `tags` (comma-separated)
+
+Output:
+
+- updated product tags
+
+### `remove-product-tags`
+
+Input:
+
+- `product_id`
+- `tags` (comma-separated)
+
+Output:
+
+- updated product tags
 
 ### `get-order`
 
@@ -105,6 +133,28 @@ Output:
 - number of orders
 - amount spent
 
+### `add-customer-tags`
+
+Input:
+
+- `customer_id`
+- `tags` (comma-separated)
+
+Output:
+
+- updated customer tags
+
+### `remove-customer-tags`
+
+Input:
+
+- `customer_id`
+- `tags` (comma-separated)
+
+Output:
+
+- updated customer tags
+
 ### `search-orders`
 
 Input:
@@ -122,6 +172,28 @@ Output:
 - fulfillment status
 - total price
 - customer summary
+
+### `add-order-tags`
+
+Input:
+
+- `order_id`
+- `tags` (comma-separated)
+
+Output:
+
+- updated order tags
+
+### `remove-order-tags`
+
+Input:
+
+- `order_id`
+- `tags` (comma-separated)
+
+Output:
+
+- updated order tags
 
 ## Provider Settings
 

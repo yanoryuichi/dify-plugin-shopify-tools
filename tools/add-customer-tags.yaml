@@ -1,0 +1,41 @@
+identity:
+  name: "add-customer-tags"
+  author: "ryuichi"
+  label:
+    en_US: "Add customer tags"
+    ja_JP: "顧客タグ追加"
+
+description:
+  human:
+    en_US: "Add tags to a Shopify customer without duplicating existing tags"
+    ja_JP: "既存タグを重複させずに Shopify 顧客へタグを追加します"
+  llm: "Add tags to a Shopify customer"
+
+parameters:
+  - name: customer_id
+    type: string
+    required: true
+    label:
+      en_US: Customer ID
+      ja_JP: 顧客ID
+    human_description:
+      en_US: "Shopify customer numeric ID"
+      ja_JP: "Shopify の顧客数値 ID"
+    llm_description: "Shopify customer numeric ID"
+    form: llm
+
+  - name: tags
+    type: string
+    required: true
+    label:
+      en_US: Tags
+      ja_JP: タグ
+    human_description:
+      en_US: "Comma-separated tags to add, for example vip, repeat"
+      ja_JP: "追加するカンマ区切りタグ。例: vip, repeat"
+    llm_description: "Comma-separated tags to add"
+    form: llm
+
+extra:
+  python:
+    source: tools/add-customer-tags.py

@@ -1,0 +1,41 @@
+identity:
+  name: "remove-order-tags"
+  author: "ryuichi"
+  label:
+    en_US: "Remove order tags"
+    ja_JP: "注文タグ削除"
+
+description:
+  human:
+    en_US: "Remove tags from a Shopify order"
+    ja_JP: "Shopify 注文からタグを削除します"
+  llm: "Remove tags from a Shopify order"
+
+parameters:
+  - name: order_id
+    type: string
+    required: true
+    label:
+      en_US: Order ID
+      ja_JP: 注文ID
+    human_description:
+      en_US: "Shopify order numeric ID"
+      ja_JP: "Shopify の注文数値 ID"
+    llm_description: "Shopify order numeric ID"
+    form: llm
+
+  - name: tags
+    type: string
+    required: true
+    label:
+      en_US: Tags
+      ja_JP: タグ
+    human_description:
+      en_US: "Comma-separated tags to remove, for example vip, urgent"
+      ja_JP: "削除するカンマ区切りタグ。例: vip, urgent"
+    llm_description: "Comma-separated tags to remove"
+    form: llm
+
+extra:
+  python:
+    source: tools/remove-order-tags.py

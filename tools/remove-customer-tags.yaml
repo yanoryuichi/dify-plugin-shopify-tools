@@ -1,0 +1,41 @@
+identity:
+  name: "remove-customer-tags"
+  author: "ryuichi"
+  label:
+    en_US: "Remove customer tags"
+    ja_JP: "顧客タグ削除"
+
+description:
+  human:
+    en_US: "Remove tags from a Shopify customer"
+    ja_JP: "Shopify 顧客からタグを削除します"
+  llm: "Remove tags from a Shopify customer"
+
+parameters:
+  - name: customer_id
+    type: string
+    required: true
+    label:
+      en_US: Customer ID
+      ja_JP: 顧客ID
+    human_description:
+      en_US: "Shopify customer numeric ID"
+      ja_JP: "Shopify の顧客数値 ID"
+    llm_description: "Shopify customer numeric ID"
+    form: llm
+
+  - name: tags
+    type: string
+    required: true
+    label:
+      en_US: Tags
+      ja_JP: タグ
+    human_description:
+      en_US: "Comma-separated tags to remove, for example vip, repeat"
+      ja_JP: "削除するカンマ区切りタグ。例: vip, repeat"
+    llm_description: "Comma-separated tags to remove"
+    form: llm
+
+extra:
+  python:
+    source: tools/remove-customer-tags.py

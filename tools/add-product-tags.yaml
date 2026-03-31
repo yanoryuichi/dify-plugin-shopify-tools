@@ -1,0 +1,41 @@
+identity:
+  name: "add-product-tags"
+  author: "ryuichi"
+  label:
+    en_US: "Add product tags"
+    ja_JP: "商品タグ追加"
+
+description:
+  human:
+    en_US: "Add tags to a Shopify product without duplicating existing tags"
+    ja_JP: "既存タグを重複させずに Shopify 商品へタグを追加します"
+  llm: "Add tags to a Shopify product"
+
+parameters:
+  - name: product_id
+    type: string
+    required: true
+    label:
+      en_US: Product ID
+      ja_JP: 商品ID
+    human_description:
+      en_US: "Shopify product numeric ID"
+      ja_JP: "Shopify の商品数値 ID"
+    llm_description: "Shopify product numeric ID"
+    form: llm
+
+  - name: tags
+    type: string
+    required: true
+    label:
+      en_US: Tags
+      ja_JP: タグ
+    human_description:
+      en_US: "Comma-separated tags to add, for example featured, spring"
+      ja_JP: "追加するカンマ区切りタグ。例: featured, spring"
+    llm_description: "Comma-separated tags to add"
+    form: llm
+
+extra:
+  python:
+    source: tools/add-product-tags.py
