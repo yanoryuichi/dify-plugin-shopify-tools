@@ -2,11 +2,11 @@ identity:
   author: "ryuichi"
   name: "shopify-tools"
   label:
-    en_US: "shopify-tools"
-    ja_JP: "shopify-tools"
+    en_US: "Shopify Tools"
+    ja_JP: "Shopify Tools"
   description:
-    en_US: "Shopify tools for my Dify workflows"
-    ja_JP: "Shopify tools for my Dify workflows"
+    en_US: "Tools for working with Shopify products, orders, customers, and more"
+    ja_JP: "Shopify の商品・注文・顧客などを操作するためのツール"
   icon: "icon.svg"
 
 credentials_for_provider:
@@ -32,12 +32,12 @@ credentials_for_provider:
     options:
       - value: access_token
         label:
-          en_US: Admin API access token - Legacy custom app
-          ja_JP: Admin API アクセストークン - レガシーカスタムアプリ
+          en_US: Admin API access token
+          ja_JP: Admin API アクセストークン
       - value: client_credentials
         label:
-          en_US: Client credentials (ID / secret) - Custom app on Dev Dashboard
-          ja_JP: Client ID / Client secret - 開発者ダッシュボードのカスタムアプリ
+          en_US: Client credentials (Client ID / Client secret)
+          ja_JP: Client credentials (Client ID / Client secret)
 
   admin_api_access_token:
     type: secret-input
