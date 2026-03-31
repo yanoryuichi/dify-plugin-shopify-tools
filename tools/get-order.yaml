@@ -1,0 +1,41 @@
+identity:
+  name: "get-order"
+  author: "ryuichi"
+  label:
+    en_US: "Get order"
+    ja_JP: "注文取得"
+
+description:
+  human:
+    en_US: "Get a Shopify order by order ID or order name"
+    ja_JP: "注文IDまたは注文番号で Shopify の注文を取得します"
+  llm: "Get a Shopify order by order ID or order name"
+
+parameters:
+  - name: order_id
+    type: string
+    required: false
+    label:
+      en_US: Order ID
+      ja_JP: 注文ID
+    human_description:
+      en_US: "Shopify order numeric ID, for example 1234567890123"
+      ja_JP: "Shopify の注文数値 ID。例: 1234567890123"
+    llm_description: "Shopify order numeric ID"
+    form: llm
+
+  - name: name
+    type: string
+    required: false
+    label:
+      en_US: Order name
+      ja_JP: 注文番号
+    human_description:
+      en_US: "Shopify order name, for example #1001 or 1001"
+      ja_JP: "Shopify の注文番号。例: #1001 または 1001"
+    llm_description: "Shopify order name"
+    form: llm
+
+extra:
+  python:
+    source: tools/get-order.py

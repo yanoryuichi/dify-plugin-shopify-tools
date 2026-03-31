@@ -93,6 +93,7 @@ credentials_for_provider:
 
 tools:
   - tools/get-product.yaml
+  - tools/get-order.yaml
   - tools/search-products.yaml
 
 extra:
