@@ -19,8 +19,8 @@ parameters:
       en_US: Customer ID
       ja_JP: 顧客ID
     human_description:
-      en_US: "Shopify customer ID"
-      ja_JP: "Shopify の顧客 ID"
+      en_US: "Shopify customer ID, for example 1234567890123"
+      ja_JP: "Shopify の顧客 ID。例: 1234567890123"
     llm_description: "Shopify customer ID"
     form: llm
 

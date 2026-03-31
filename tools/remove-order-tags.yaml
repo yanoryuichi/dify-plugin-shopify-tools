@@ -19,8 +19,8 @@ parameters:
       en_US: Order ID
       ja_JP: 注文ID
     human_description:
-      en_US: "Shopify order ID"
-      ja_JP: "Shopify の注文 ID"
+      en_US: "Shopify order ID, for example 1234567890123"
+      ja_JP: "Shopify の注文 ID。例: 1234567890123"
     llm_description: "Shopify order ID"
     form: llm
 
