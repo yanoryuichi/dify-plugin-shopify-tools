@@ -129,6 +129,7 @@ class SearchOrdersTool(Tool):
               }
               customer {
                 displayName
+                email
               }
             }
           }
@@ -186,6 +187,7 @@ class SearchOrdersTool(Tool):
                         "total_price": total_price.get("amount"),
                         "currency": total_price.get("currencyCode"),
                         "customer_display_name": customer.get("displayName"),
+                        "customer_email": customer.get("email"),
                     }
                 )
 
