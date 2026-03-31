@@ -85,7 +85,7 @@ Scope examples by feature:
 - Order-related and customer-related tools are related to protected customer data.
 - Especially when using the Admin API access token method, handling customer identifiers such as `email` or `phone` may require additional settings or review.
 - Available fields and settings can vary depending on Shopify plan and app type.
-- Check Shopify protected customer data settings and app permissions for details.
+- Check Shopify protected customer data settings and app permissions for details. This plugin does not guarantee the availability of features related to protected customer data in your Shopify configuration.
 
 ## Authentication methods
 

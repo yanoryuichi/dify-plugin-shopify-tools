@@ -86,14 +86,9 @@ Shopify の商品、注文、顧客の取得・検索・タグ更新を行う Di
 - 注文関連・顧客関連のツールは、protected customer data に関係します。
 - 特に Admin API access token を使う方法では、`email` や `phone` などの顧客識別情報を扱う場合、追加設定や審査が必要になることがあります。
 - Shopify の仕様やストアプランにより、利用できる項目や設定画面が異なる場合があります。
-- 詳しくは Shopify 側の protected customer data 設定とアプリ権限を確認してください。本プラグイン側では個別の利用可否は保証できません。
+- 詳しくは Shopify 側の protected customer data 設定とアプリ権限を確認してください。本プラグイン側では、保護された顧客データに関連する機能の利用可否は保証できません。
 
 ## 認証情報の作成
-
-### どちらの認証方式を選ぶか
-
-まずは Admin API access token を使う方法が分かりやすく、設定も簡単です。  
-Client credentials は Shopify の Dev Dashboard 側での作業が必要です。
 
 ### Admin API access token を使う方法
 
