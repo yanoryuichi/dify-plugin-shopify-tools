@@ -90,15 +90,21 @@ Shopify の商品、注文、顧客の取得・検索・タグ更新を行う Di
 
 ## 認証情報の作成
 
+以下の手順は、Shopify 側の画面や名称は変更されることがあるため、最新の表示と異なる場合があります。  
+特に protected customer data に関する設定や利用可否は、Shopify の仕様、ストアプラン、アプリ種別に依存します。
+
 ### Admin API access token を使う方法
 
 この手順で取得した `shop_domain`, `api_version`, `auth_method=access_token`, `admin_api_access_token` を Dify プラグイン設定に入力します。
 
-1. Shopify ストア管理画面で、`設定` -> `アプリと販売チャネル` を開きます。
-2. `アプリを開発する` を押して、ストア用のアプリを作成します。
-3. Admin API スコープを設定します。
-4. 必要なスコープを保存したら、アプリをストアへインストールします。
-5. Admin API access token を表示し、控えておきます。
+1. Shopify ストア管理画面で、`設定` -> `アプリ` を開き、`アプリを開発する` を押します。
+2. ストア用のアプリを作成し、適当なアプリ名を入力して作成します。
+3. アプリ作成後、`概要` タブで `Admin API スコープを設定する` を押します。
+4. 次のスコープを選択して保存します。  
+   `write_orders`, `read_orders`, `write_products`, `read_products`, `write_customers`, `read_customers`
+5. 必要に応じて、`設定` タブで protected customer data に関する追加設定を確認します。
+6. `アプリをインストール` を押します。
+7. `API 資格情報` タブで `Admin API access token` を表示し、控えておきます。
 
 選択するスコープの例:
 
@@ -106,24 +112,25 @@ Shopify の商品、注文、顧客の取得・検索・タグ更新を行う Di
 - 注文の取得・検索・タグ更新: `read_orders`, `write_orders`
 - 顧客の取得・検索・タグ更新: `read_customers`, `write_customers`
 
-補足:
-
-- Shopify の画面や名称は変更されることがあります。
-- 顧客情報や注文情報の一部は、Shopify 側の追加設定が必要になる場合があります。
-
 ### Client ID / Client secret を使う方法
 
 この手順で取得した `shop_domain`, `api_version`, `auth_method=client_credentials`, `client_id`, `client_secret` を Dify プラグイン設定に入力します。
 
-1. Shopify の Dev Dashboard でカスタムアプリを作成します。
-2. 必要な API スコープを選択します。
-3. アプリのバージョンをリリースします。
-4. 作成したアプリをストアへインストールします。
-5. Client ID と Client secret を確認し、控えておきます。
-
-補足:
-
-- Shopify の設定やストアの状態によっては、顧客情報へのアクセスに追加設定が必要です。
+1. Shopify ストア管理画面で、`設定` -> `アプリ` を開き、`アプリを開発する` を押します。
+2. `Dev Dashboard でアプリを開発` を押します。
+3. Dev Dashboard で `アプリを作成` を押します。
+4. 適当なアプリ名を入力して作成します。
+5. アプリ作成後、バージョン画面で `アクセス` の `スコープを選択` を押します。
+6. 次のスコープを選択します。  
+   `write_orders`, `read_orders`, `write_products`, `read_products`, `write_customers`, `read_customers`
+7. スコープ設定後、`リリース` を押してアプリバージョンを公開します。
+8. Dev Dashboard 右上の組織メニューから `Partner Dashboard` を開きます。
+9. `アプリ配布` から作成したアプリを選択します。
+10. `API アクセス要求` を開き、protected customer data に関する `アクセス権をリクエスト` を押します。
+11. 必要事項を入力して保存します。
+12. `配布` で `カスタム配布` を選び、対象ストアドメインを入力してインストールリンクを生成します。
+13. 生成したリンクを開き、対象ストアでアプリをインストールします。
+14. Dev Dashboard の `設定` で `Client ID` と `Client secret` を確認し、控えておきます。
 
 ## Dify プラグイン設定に入力する値
 

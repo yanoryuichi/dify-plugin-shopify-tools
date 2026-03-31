@@ -89,6 +89,9 @@ Scope examples by feature:
 
 ## Authentication methods
 
+The steps below may differ from the latest Shopify UI, because Shopify screens and labels can change.  
+Protected customer data related settings and feature availability depend on Shopify app type, store plan, and Shopify requirements.
+
 ### Option 1: Admin API access token
 
 Use this method if you want to configure the plugin with:
@@ -102,9 +105,12 @@ General steps:
 
 1. In your Shopify admin, open `Settings` -> `Apps and sales channels`.
 2. Open app development and create an app for your store.
-3. Configure Admin API scopes for the resources you want to use.
-4. Install the app to the store.
-5. Copy the Admin API access token.
+3. Open the app overview and configure Admin API scopes.
+4. Enable these scopes if you want to use all plugin features:  
+   `write_orders`, `read_orders`, `write_products`, `read_products`, `write_customers`, `read_customers`
+5. If needed, review protected customer data related settings in Shopify.
+6. Install the app to the store.
+7. Open the API credentials tab and copy the Admin API access token.
 
 Note:
 
@@ -122,11 +128,16 @@ Use this method if you want to configure the plugin with:
 
 General steps:
 
-1. Create a custom app from the Shopify developer dashboard.
-2. Configure the required API scopes.
-3. Release the app version.
-4. Install the app to your store.
-5. Copy the Client ID and Client secret.
+1. In your Shopify admin, open `Settings` -> `Apps and sales channels`.
+2. Open app development and choose the option to develop the app in the Shopify Dev Dashboard.
+3. Create the app in the Dev Dashboard.
+4. Open the app version and configure API scopes.
+5. Enable these scopes if you want to use all plugin features:  
+   `write_orders`, `read_orders`, `write_products`, `read_products`, `write_customers`, `read_customers`
+6. Release the app version.
+7. Open the Partner Dashboard from the organization menu if additional app distribution or protected customer data access steps are required.
+8. Configure custom distribution and install the app to your store.
+9. Open the app settings in Dev Dashboard and copy the Client ID and Client secret.
 
 Note:
 
