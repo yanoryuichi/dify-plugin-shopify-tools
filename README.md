@@ -142,6 +142,7 @@ General steps:
 Note:
 
 - Depending on your Shopify configuration, customer-related access may still require additional setup.
+- If you need to change API access scopes, create a new app version in Dev Dashboard, update the scopes there, and release the new version.
 
 ## Dify plugin settings
 
