@@ -7,8 +7,8 @@ identity:
 
 description:
   human:
-    en_US: "Add tags to a Shopify order without duplicating existing tags"
-    ja_JP: "既存タグを重複させずに Shopify 注文へタグを追加します"
+    en_US: "Add tags to a Shopify order"
+    ja_JP: "Shopify 注文へタグを追加します"
   llm: "Add tags to a Shopify order"
 
 parameters:
@@ -19,9 +19,9 @@ parameters:
       en_US: Order ID
       ja_JP: 注文ID
     human_description:
-      en_US: "Shopify order numeric ID"
-      ja_JP: "Shopify の注文数値 ID"
-    llm_description: "Shopify order numeric ID"
+      en_US: "Shopify order ID"
+      ja_JP: "Shopify の注文 ID"
+    llm_description: "Shopify order ID"
     form: llm
 
   - name: tags

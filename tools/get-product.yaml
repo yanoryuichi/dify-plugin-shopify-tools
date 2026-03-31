@@ -19,9 +19,9 @@ parameters:
       en_US: Product ID
       ja_JP: 商品ID
     human_description:
-      en_US: "Shopify product numeric ID, for example 1234567890123"
-      ja_JP: "Shopify の商品数値 ID。例: 1234567890123"
-    llm_description: "Shopify product numeric ID"
+      en_US: "Shopify product ID, for example 1234567890123"
+      ja_JP: "Shopify の商品 ID。例: 1234567890123"
+    llm_description: "Shopify product ID"
     form: llm
 
   - name: handle
