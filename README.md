@@ -162,6 +162,14 @@ Note:
 - `client_id`: your Shopify Client ID
 - `client_secret`: your Shopify Client secret
 
+## Shopify search query reference
+
+The `query` parameter for these tools follows Shopify Admin GraphQL search syntax.
+
+- `search-products`: https://shopify.dev/docs/api/admin-graphql/latest/queries/products
+- `search-orders`: https://shopify.dev/docs/api/admin-graphql/latest/queries/orders
+- `search-customers`: https://shopify.dev/docs/api/admin-graphql/latest/queries/customers
+
 ## Notes
 
 - `shop_domain` must be your Shopify domain such as `your-store.myshopify.com`

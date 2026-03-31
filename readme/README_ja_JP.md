@@ -154,6 +154,14 @@ Shopify の商品、注文、顧客の取得・検索・タグ更新を行う Di
 - `client_id`: Shopify で取得した Client ID
 - `client_secret`: Shopify で取得した Client secret
 
+## Shopify の検索クエリについて
+
+`search-products`, `search-orders`, `search-customers` の `query` には、Shopify Admin GraphQL の検索構文を指定します。
+
+- `search-products`: https://shopify.dev/docs/api/admin-graphql/latest/queries/products
+- `search-orders`: https://shopify.dev/docs/api/admin-graphql/latest/queries/orders
+- `search-customers`: https://shopify.dev/docs/api/admin-graphql/latest/queries/customers
+
 ## 注意
 
 - `shop_domain` は `your-store.myshopify.com` の形式で入力してください。
