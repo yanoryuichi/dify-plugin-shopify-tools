@@ -32,4 +32,4 @@ Some tools handle personal data such as customer email addresses and phone numbe
 
 ## Contact
 
-For questions or concerns, please open an issue on the plugin's GitHub repository.
+For questions or concerns, contact the author via GitHub.
