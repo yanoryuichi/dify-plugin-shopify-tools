@@ -170,18 +170,15 @@ The `query` parameter for these tools follows Shopify Admin GraphQL search synta
 - `search-orders`: https://shopify.dev/docs/api/admin-graphql/latest/queries/orders
 - `search-customers`: https://shopify.dev/docs/api/admin-graphql/latest/queries/customers
 
-## Disclaimer
-
-- This plugin is provided without any guarantee of specific results.
-- Behavior may vary depending on Shopify settings, permissions, and platform changes.
-- Use this plugin at your own risk.
-
 ## Notes
 
 - `shop_domain` must be your Shopify domain such as `your-store.myshopify.com`
 - Do not include `https://`
 - Resource IDs used by this plugin are Shopify numeric IDs such as `1234567890123`
+- Tag operations (add/remove) directly modify live Shopify data. Verify your inputs before use.
+- Results may vary depending on Shopify plan, app type, scopes, and API changes.
+- This plugin is provided as-is. The author assumes no responsibility for any consequences arising from its use.
 
 ## Author
 
-ryuichi
+ryuichi-x

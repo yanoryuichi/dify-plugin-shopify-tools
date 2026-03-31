@@ -4,26 +4,32 @@ This plugin uses user-provided Shopify credentials only to call the Shopify Admi
 
 ## Data Processed
 
-- shop domain
-- API credentials
-- API version
-- product ID or handle
-- product data returned by Shopify
+This plugin may process the following data, depending on which tools are used:
+
+- Shopify credentials (shop domain, API access token, client ID, client secret)
+- Shopify API version
+- Product data (IDs, titles, tags, and related fields)
+- Order data (IDs, names, statuses, totals, and related fields)
+- Customer data (IDs, email addresses, phone numbers, tags, and related fields)
 
 ## Purpose
 
-- authenticate with Shopify
-- fetch Shopify product data
-- return the result to the user in Dify
+- Authenticate with Shopify
+- Fetch or update Shopify data as requested
+- Return results to the user within Dify
 
 ## Third-Party Services
 
-This plugin sends requests to Shopify.
+This plugin sends requests to Shopify. Shopify's own privacy policy applies to data processed by Shopify.
 
 ## Data Storage
 
-This plugin is not intended to permanently store Shopify data outside the Dify environment.
+This plugin does not store Shopify data outside the Dify environment. Credentials are stored only as configured in Dify's plugin settings.
+
+## Customer Data
+
+Some tools handle personal data such as customer email addresses and phone numbers. Users of this plugin are responsible for ensuring their use of customer data complies with applicable laws and Shopify's policies.
 
 ## Contact
 
-Please contact the author via the repository or plugin page.
+For questions or concerns, please open an issue on the plugin's GitHub repository.

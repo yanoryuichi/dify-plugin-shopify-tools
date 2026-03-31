@@ -162,18 +162,15 @@ Shopify の商品、注文、顧客の取得・検索・タグ更新を行う Di
 - `search-orders`: https://shopify.dev/docs/api/admin-graphql/latest/queries/orders
 - `search-customers`: https://shopify.dev/docs/api/admin-graphql/latest/queries/customers
 
-## 免責事項
-
-- このプラグインの利用結果は保証されません。
-- Shopify の設定、権限、仕様変更などにより、期待どおりに動作しない場合があります。
-- 本プラグインは利用者の責任で使用してください。
-
 ## 注意
 
 - `shop_domain` は `your-store.myshopify.com` の形式で入力してください。
 - `https://` は含めないでください。
 - このプラグインで使う `product_id`, `order_id`, `customer_id` は Shopify の数値 ID です。例: `1234567890123`
+- タグの追加・削除操作は、Shopify の本番データを直接変更します。実行前に入力内容を確認してください。
+- Shopify のプラン、アプリ種別、スコープ設定、API の変更などにより、動作結果が異なる場合があります。
+- 本プラグインはいかなる保証も行いません。利用により生じた結果について、作者は責任を負いません。
 
 ## Author
 
-ryuichi
+ryuichi-x
